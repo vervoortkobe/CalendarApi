@@ -34,13 +34,13 @@ export class CalendarController {
       console.log(ev.type)
       if(ev.type === 'VEVENT') {
         const ap = new Appointment();
-        ap.Title = ev.summary;
-        ap.Details = ev.description;
-        ap.StartDate = ev.start.toLocaleString("en-US");
-        ap.EndDate = ev.end.toLocaleString("en-US");;
-        ap.Time = "";
-        ap.Tag = "Event";
-        ap.Visibility = "none";
+        ap.title = ev.summary;
+        ap.details = ev.description;
+        ap.start = ev.start.toLocaleString("en-US");
+        ap.end = ev.end.toLocaleString("en-US");;
+        ap.time = "";
+        ap.tag = "Event";
+        ap.visibility = "none";
         await this.svc.upload(ap);
         console.log("uploaded")
       }
