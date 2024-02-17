@@ -1,12 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, ObjectId } from 'mongoose';
+import { Document } from 'mongoose';
 
 export type AppointmentDocument = Appointment & Document;
 
 @Schema()
 export class Appointment {
-  @Prop()
-  _id?: ObjectId;
 
   @Prop()
   title: string;
